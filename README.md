@@ -116,12 +116,20 @@ aws-terraform-infrastructure-platform/
 │       ├── main.tf
 │       ├── variables.tf
 │       └── outputs.tf
-└── environments/
-    └── dev/                     # Development environment orchestration
-        ├── main.tf
-        ├── variables.tf
-        ├── terraform.tfvars
-        └── outputs.tf
+├── environments/
+│   ├── dev/                     # Development environment orchestration
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   ├── terraform.tfvars
+│   │   └── outputs.tf
+│   └── prod/                    # Production environment orchestration
+│       ├── main.tf
+│       ├── variables.tf
+│       ├── terraform.tfvars
+│       └── outputs.tf
+└── scripts/
+    ├── validate.sh              # Automated repository validation suite
+    └── deploy.sh                # Interactive environment deployment helper
 ```
 
 ---

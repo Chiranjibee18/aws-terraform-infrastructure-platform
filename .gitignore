@@ -1,0 +1,41 @@
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Exclude sensitive tfvars files (allow public template/example files)
+*.tfvars.json
+*secret*.tfvars
+*.auto.tfvars
+
+# Ignore override files as they are usually used only locally
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ignore CLI configuration files
+.terraformrc
+terraform.rc
+
+# Credentials & Key Pairs
+*.pem
+*.key
+*.pub
+secrets/
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*~

@@ -23,11 +23,13 @@ jobs:
         run: |
           terraform fmt -check -recursive
 
-      - name: Terraform Init & Validate (Dev)
+      - name: Terraform Init & Validate (Dev, Prod, Backend)
         run: |
-          cd environments/dev
-          terraform init -backend=false
-          terraform validate
+          for dir in backend-setup environments/dev environments/prod; do
+            echo "::group::Validating $dir"
+            (cd "$dir" && terraform init -backend=false && terraform validate)
+            echo "::endgroup::"
+          done
 
       - name: Run tfsec Security Scanner
         uses: aquasecurity/tfsec-action@v1.0.0
