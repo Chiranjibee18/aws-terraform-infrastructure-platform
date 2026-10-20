@@ -107,8 +107,8 @@ resource "aws_autoscaling_group" "app" {
   target_group_arns   = [aws_lb_target_group.app.arn]
   health_check_type   = "ELB"
 
-  min_size     = var.min_size
-  max_size     = var.max_size
+  min_size         = var.min_size
+  max_size         = var.max_size
   desired_capacity = var.desired_capacity
 
   launch_template {
